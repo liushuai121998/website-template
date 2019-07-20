@@ -20,6 +20,7 @@
 
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/swiper.min.css">
 </head>
 <body>
@@ -29,28 +30,59 @@
                 <a href="./index.html"><img class="logo-img" src="img/logo.png" alt="这是描述信息" title="这是描述信息" /></a>
             </div>
             <div class="header__nav-wrap fl">
-                <ul class="header__nav fr">
-                    <li class="header__nav-item">
-                        <a class="nav-link" href="./index.html">首页</a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a class="nav-link" href="./intro.html">公司简介</a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a class="nav-link" href="./product.html">设计案例</a>
-                    </li>
+                <div class="header__nav fr">
+                    <!--            -->
+                    <a href="javascript:void(0)" class="nav-toggle fr">
+                        <i class="icon icon-menu"></i>
+                    </a>
+                    <ul class="header__nav-content fr">
+                        <li class="header__nav-item">
+                            <a class="nav-link" href="./index.html">首页</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="nav-link" href="./intro.html">公司简介</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="nav-link" href="./product.html">设计案例</a>
+                        </li>
 
-                    <li class="header__nav-item">
-                        <a class="nav-link" href="./contact.html">联系我们</a>
-                    </li>
-                </ul>
+                        <li class="header__nav-item">
+                            <a class="nav-link" href="./contact.html">联系我们</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--移动端的导航-->
+                <div class="m-nav">
+                    <div class="m-nav__top cleaarfix">
+                        <i class="icon icon-close fr"></i>
+                    </div>
+                    <ul class="m-nav__content">
+                        <li class="m-nav__item">
+                            <a class="nav-link" href="./index.html">首页</a>
+                        </li>
+                        <li class="m-nav__item">
+                            <a class="nav-link" href="./intro.html">公司简介</a>
+                        </li>
+                        <li class="m-nav__item">
+                            <a class="nav-link" href="./product.html">设计案例</a>
+                        </li>
+                        <li class="m-nav__item">
+                            <a class="nav-link" href="./concact.html">联系我们</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide" data-hash="page1">Slide 1</div>
+                <div class="swiper-slide" data-hash="page1">
+                    <img src="img/building.jpg" alt="">
+                </div>
                 <div class="swiper-slide" data-hash="page2">Slide 2</div>
                 <div class="swiper-slide" data-hash="page3">Slide 3</div>
+                <div class="swiper-slide" data-hash="page4">Slide 4</div>
+                <div class="swiper-slide" data-hash="page5">Slide 5</div>
+                <div class="swiper-slide" data-hash="page6">Slide 6</div>
             </div>
             <!-- 如果需要分页器 -->
             <div class="swiper-pagination"></div>
@@ -64,8 +96,18 @@
         </div>
     </div>
     <script src="js/swiper.min.js"></script>
+    <script src="js/jquery.js"></script>
     <script>
-        window.onload = function () {
+        $(function () {
+            // 移动端nav
+            $('.nav-toggle').on('click', function() {
+                $('.m-nav').addClass('open');
+            })
+            $('.m-nav .m-nav__top .icon').on('click', function() {
+                $('.m-nav').removeClass('open')
+            })
+
+        //    swiper
             var mySwiper = new Swiper('.swiper-container', {
                 direction: 'vertical', // 垂直切换选项
                 loop: false, // 循环模式
@@ -83,7 +125,7 @@
                 mousewheel: true, // 鼠标事件
                 hashNavigation: true, // 锚导航
             });
-        }
+        })
     </script>
 </body>
 </html>

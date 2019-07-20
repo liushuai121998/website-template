@@ -33,7 +33,7 @@ html, body {
     width: 68%;
 }
 .header__nav {
-    display: none;
+    /*display: none;*/
 }
 .header__nav .header__nav-item {
     position: relative;
@@ -53,59 +53,76 @@ html, body {
     left: 0;
     transition: all 0.5s ease 0s;
 }
-
-.header__nav .header__nav-item .nav-link {
-    text-decoration: none;
+.header__nav .nav-link {
     padding: 0 25px;
+}
+
+.nav-link {
+    text-decoration: none;
+    height: 65px;
     color: #333;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 65px;
 }
-/*header__nav end*/
-
-/*swiper */
-.main .swiper-container {
+/*移动端*/
+.nav-toggle {
+    padding-right: 30px;
+    line-height: 65px;
+    display: none;
+}
+.nav-toggle .icon {
+    color: #000;
+    font-size: 20px;
+}
+.m-nav {
+    position: fixed;
+    right: 0;
+    top: 0;
     height: 100%;
-    padding-top: 65px;
+    width: 80%;
+    background: #fff;
+    box-shadow: 0 15px 27px 0 rgba(167, 165, 165, 0.38);
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: all ease 0.5s;
 }
-
-
-/*intro 简介*/
-.intro {
-    height: auto;
-    margin-top: 80px;
-    margin-bottom: 50px;
-    padding: 5rem 20px;
+.m-nav.open {
+    transform: translateX(0);
 }
-.intro__body {
-    margin: 20px 0;
-    padding-left: 5px;
-    padding-right: 5px;
+.m-nav .m-nav__top {
+    padding: 20px;
 }
-.intro__body p {
-    font-size: 14px;
-    line-height: 2;
-    text-indent: 2em;
+.m-nav .m-nav__top .icon {
+    cursor: pointer;
+    font-size: 30px;
     color: rgb(89, 89, 89);
 }
-.intro__body .intro__body-img {
-    margin-right: 30px;
-    margin-left: 30px;
-    height: 316px;
-}
-.crumb-nav a, .crumb-nav span, .about-us p{
-    color: rgb(51, 51, 51);
-}
-.about-us {
+.m-nav__content {
     margin-top: 30px;
-    margin-bottom: 30px;
 }
-
-.about-us .text {
-    font-size: 24px;
-    color: rgb(89, 89, 89);
+.m-nav__content .m-nav__item {
+    padding: 0 20px;
+    border-bottom: 1px solid #f5f5f5;
+    opacity: 0;
+    transform: translateY(100%);
 }
-/**/
+.m-nav__content .m-nav__item:nth-child(1) {
+    transition: all .2s cubic-bezier(.77, 0, .175, 1) 0ms;
+}
+.m-nav__content .m-nav__item:nth-child(2) {
+    transition: all .4s cubic-bezier(.77, 0, .175, 1) 0ms;
+}
+.m-nav__content .m-nav__item:nth-child(3) {
+    transition: all .6s cubic-bezier(.77, 0, .175, 1) 0ms;
+}
+.m-nav__content .m-nav__item:nth-child(4) {
+    transition: all .8s cubic-bezier(.77, 0, .175, 1) 0ms;
+}
+.m-nav.open .m-nav__content .m-nav__item {
+    transform: translateY(0);
+    opacity: 1;
+}
+/*header__nav end*/
 
 /*footer*/
 .footer {
@@ -144,8 +161,162 @@ html, body {
 /**/
 
 
+/*swiper start*/
+.main .swiper-container {
+    height: 100%;
+    padding-top: 65px;
+}
+.swiper-container .swiper-pagination.swiper-pagination-bullets {
+    right: 30px;
+}
+.swiper-container .swiper-pagination .swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+    position: relative;
+}
+.swiper-container .swiper-pagination .swiper-pagination-bullet-active:before {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: 1px solid #007aff;
+    border-radius: 100%;
+    left: -3px;
+    top: -3px;
+}
+/*swiper end*/
+
+/*intro 简介*/
+.intro, .product, .contact {
+    height: auto;
+    margin-top: 80px;
+    margin-bottom: 50px;
+    max-width: 1600px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 80px 20px;
+}
+.intro__body {
+    margin: 20px 0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.intro__body p {
+    font-size: 14px;
+    line-height: 2;
+    text-indent: 2em;
+    color: rgb(89, 89, 89);
+}
+.intro__body .intro__body-img {
+    margin-right: 30px;
+    margin-left: 30px;
+    height: 316px;
+}
+.crumb-nav a, .crumb-nav span, .about-us p{
+    color: rgb(51, 51, 51);
+}
+.about-us {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.about-us .text {
+    font-size: 24px;
+    color: rgb(89, 89, 89);
+}
+/**/
+
+
+/*product*/
+.product__list {
+    width: 100%;
+    height: auto;
+    margin-left: -20px;
+}
+.product__list .product__list-item {
+    float: left;
+    padding: 20px;
+    width: calc(100% / 3);
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.product__list .product__list-item:hover .product__list-item-link {
+    box-shadow: 0px 0px 1rem #ccc;
+}
+.product__list .product__list-item:hover .product__list-item__img-wrap img {
+    transform: translateX(-50%) translateY(-50%) scale(1.1);
+}
+.product__list-item-link {
+    display: block;
+    width: 100%;
+    transition: all .5s ease;
+}
+.product__list-item__img-wrap {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+.product__list-item__img-wrap img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+    width: 100%;
+    height: auto;
+    transition: all .5s ease;
+}
+.product__list-item__txt {
+    padding: 20px 20px 0;
+    background: #fff;
+}
+.product__list-item__txt .txt {
+    border-bottom: 1px solid #e9e9e9;
+    height: 50px;
+}
+.product__list-item__txt span {
+    color: #333;
+    font-size: 22px;
+    font-weight: 700;
+}
+.product__list-item__txt .icon {
+    font-size: 22px;
+    color: #A9A9A9;
+}
+/**/
+
+/*contact*/
+.contact__map {
+    overflow: hidden;
+}
+.contact #map {
+    width:1600px;
+    height:550px;
+    border:#ccc solid 1px;
+    font-size:12px;
+}
+/**/
+
+
+@media only screen and (max-width: 1024px) and (min-width: 769px){
+    /*product*/
+    .product__list .product__list-item {
+        width: 50%;
+    }
+    /*    */
+}
+
 @media only screen and (max-width: 768px) {
 /*    自适应适配 小于768*/
+/*    header*/
+    .header__nav-content {
+        display: none;
+    }
+    .nav-toggle {
+        display: block;
+    }
 /*    intro*/
     .intro__body .intro__body-img {
         height: auto;
@@ -154,6 +325,12 @@ html, body {
         margin-right: 0;
     }
 /*    */
+
+    /*product*/
+    .product__list .product__list-item {
+        width: 100%;
+    }
+    /**/
 
     .footer .contact__info>div {
         width: 100%;
