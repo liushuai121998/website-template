@@ -78,9 +78,60 @@
                 <div class="swiper-slide" data-hash="page1">
                     <img src="img/building.jpg" alt="">
                 </div>
-                <div class="swiper-slide" data-hash="page2">Slide 2</div>
-                <div class="swiper-slide" data-hash="page3">Slide 3</div>
-                <div class="swiper-slide" data-hash="page4">Slide 4</div>
+                <div class="swiper-slide" data-hash="page2">
+                    <!--           核心业务         -->
+                    <div class="core-news">
+                        <div class="core-news__title">
+                            <p class="text">核心业务</p>
+                            <p class="sub-text">NEWS</p>
+                        </div>
+                        <ul class="core-news__list clearfix">
+                            <!--           index.json                 -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="swiper-slide" data-hash="page3">
+                    <!--         公司介绍           -->
+                    <div class="company-intro clearfix">
+                        <div class="company-intro__img fl">
+                            <img src="img/building.jpg" alt="">
+                        </div>
+                        <div class="company-intro__content fl">
+                            <div class="company-intro__title">
+                                <p><span class="text fz-26">ABOUT US</span><span class="sub-text fz-20">企业介绍</span></p>
+                            </div>
+                            <p class="company-intro__desc fz-14">
+                                本公司拥有完整、科学的质量管理体系。我们的诚信、实力和产品质量获得业界的广泛认可。 本着“敢于创新，稳重求进”的精神，大胆引进先进自动化生产设备，加强生产管理、严把质量关，经全面改造的公司，以其产品质量稳定、交货快捷和价格优势，在激烈的竞争市场中脱颖而出，稳步发展。 本司将致力于不断的改进产品生产工艺和品质，并且不断的发展新的产品去保持市场的竞争能力。正朝着现代企业的方向与时间一同前进。以“真诚、务实、优质、高效”为企业宗旨，竭诚为各界人士服务。 本司将以饱满的热情和精神，一如既往，视质量、信誉如生命，不断创新创好，提高质量，以答谢新老客商多年来的支持与厚爱，同时欢迎国内外客商莅临指导。
+                            </p>
+                            <div class="more-btn">
+                                <a href="intro.html">MORE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide" data-hash="page4">
+                    <!--           新闻资讯         -->
+                    <div class="core-news">
+                        <div class="core-news__title">
+                            <p class="text">新闻资讯</p>
+                            <p class="sub-text">NEWS CENTER</p>
+                        </div>
+                        <ul class="news-center__list clearfix">
+                            <li class="news-center__list-item fl">
+                                <div class="news-center__list-item__title">
+                                    CityPASS城市之旅—佐治亚州亚特兰大
+                                </div>
+                                <div class="news-center__list-item__content">
+                                    从悉尼到黄金海岸，经典澳洲东海岸自驾线路，不同的是配备豪华房车与司机，开着流动的家穿越城市与乡村，让您尽情享受旅途的每一分惊喜。驾车游览也并不是两点一线，众多小道带您发掘隐藏的珍宝和知名景点，在澳大利亚的东部尽情游玩、徜徉于国家公园中，见识澳洲最可爱的一些动物，同时还有机会体验沿途每一座景色宜人的金色沙滩。而这一切专为喜爱纯粹旅行的您准备。　　 　　 　　驾驶豪华房车驰骋在澳洲东海岸　　澳大利亚四
+                                </div>
+                                <div class="detail-btn">
+                                    <a href="news-detail.html">查看详情</a>
+                                </div>
+                            </li>
+                            <!--           index.json                 -->
+                        </ul>
+                    </div>
+                </div>
                 <div class="swiper-slide" data-hash="page5">Slide 5</div>
                 <div class="swiper-slide" data-hash="page6">Slide 6</div>
             </div>
@@ -97,6 +148,7 @@
     </div>
     <script src="js/swiper.min.js"></script>
     <script src="js/jquery.js"></script>
+    <script src="js/index.js"></script>
     <script>
         $(function () {
             // 移动端nav
@@ -106,8 +158,7 @@
             $('.m-nav .m-nav__top .icon').on('click', function() {
                 $('.m-nav').removeClass('open')
             })
-
-        //    swiper
+            //    swiper
             var mySwiper = new Swiper('.swiper-container', {
                 direction: 'vertical', // 垂直切换选项
                 loop: false, // 循环模式

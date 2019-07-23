@@ -164,7 +164,9 @@ html, body {
 /*swiper start*/
 .main .swiper-container {
     height: 100%;
-    padding-top: 65px;
+}
+.swiper-wrapper {
+    height: 100%;
 }
 .swiper-container .swiper-pagination.swiper-pagination-bullets {
     right: 30px;
@@ -185,7 +187,107 @@ html, body {
     left: -3px;
     top: -3px;
 }
+.swiper-slide {
+    /*background: #f4f4f4;*/
+    padding-top: 65px;
+    box-sizing: border-box;
+}
 /*swiper end*/
+
+
+/*页面样式*/
+/*index 首页*/
+
+/*    业务*/
+.core-news, .company-intro {
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px 20px 0;
+    height: 100%;
+}
+.core-news__title p {
+    text-align: center;
+    font-size: 24px;
+    color: rgb(89, 89, 89);
+}
+
+.core-news__title .sub-text {
+    line-height: 3;
+    font-size: 14px;
+}
+.core-news__title .sub-text:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 52px;
+    background: #000;
+    margin: 0 auto;
+}
+.core-news__list {
+    width: 100%;
+    margin-top: 50px;
+}
+.core-news__list .core_news__list-item {
+    width: 25%;
+    height: auto;
+    min-height: 192px;
+    border: 1px solid #f0f0f0;
+    background: rgb(249, 249, 249);
+    box-sizing: border-box;
+}
+.core-news__list .core_news__list-item:hover {
+    background: rgb(240, 240, 240);
+}
+.core_news__list-item__img {
+    width: 68px;
+    height: 62px;
+    margin: 30px auto 10px;
+}
+.core-news__list-item__info p {
+    text-align: center;
+    line-height: 2;
+    color: rgb(89, 89, 89);
+}
+
+/*企业介绍*/
+.company-intro__img, .company-intro__content {
+    width: 49%;
+}
+
+.company-intro__img {
+    margin-right: 2%;
+    display: block;
+}
+.company-intro__img img {
+    width: 100%;
+}
+.company-intro__title .text, .company-intro__title .sub-text{
+    margin-right: 10px;
+    color: rgb(89, 89, 89);
+}
+.company-intro__desc {
+    color: #808080;
+    margin: 20px 0 40px;
+    line-height: 1.8;
+}
+.more-btn a {
+    display: inline-block;
+    padding: 0 20px;
+    width: 100px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background: rgb(51, 51, 51);
+    color: #fff;
+}
+
+/*新闻资讯*/
+.news-center__list {
+
+}
+
+/*index end*/
 
 /*intro 简介*/
 .intro, .product, .contact {
@@ -316,6 +418,14 @@ html, body {
     }
     .nav-toggle {
         display: block;
+    }
+
+/*    index*/
+    .company-intro__img {
+        display: none;
+    }
+    .company-intro__content {
+        width: 100%;
     }
 /*    intro*/
     .intro__body .intro__body-img {
