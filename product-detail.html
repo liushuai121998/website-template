@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/jquery.exzoom.css">
 </head>
 <body>
 <div class="main">
@@ -85,6 +86,30 @@
             <p class="text">设计案例</p>
             <p>CASE</p>
         </div>
+        <div class="product-detail">
+            <div class="exzoom" id="exzoom" style="width: 400px; height: 400px;">
+                <!--大图区域-->
+                <div class="exzoom_img_box">
+                    <ul class='exzoom_img_ul'>
+                        <li><img src="img/building.jpg"/></li>
+                        <li><img src="img/building.jpg"/></li>
+                        <li><img src="img/building.jpg"/></li>
+                        <li><img src="img/building.jpg"/></li>
+                        <li><img src="img/building.jpg"/></li>
+                        <li><img src="img/building.jpg"/></li>
+                        <li><img src="img/building.jpg"/></li>
+                        <li><img src="img/building.jpg"/></li>
+                    </ul>
+                </div>
+                <!--缩略图导航-->
+                <div class="exzoom_nav"></div>
+                <!--控制按钮-->
+                <p class="exzoom_btn">
+                    <a href="javascript:void(0);" class="exzoom_prev_btn"> < </a>
+                    <a href="javascript:void(0);" class="exzoom_next_btn"> > </a>
+                </p>
+            </div>
+        </div>
     </div>
     <div class="footer">
         <div class="footer__body">
@@ -126,6 +151,7 @@
     </div>
 </div>
 <script src="js/jquery.js"></script>
+<script src="js/jquery.exzoom.js"></script>
 <script>
     $(function () {
         // 移动端nav
@@ -135,6 +161,17 @@
         $('.m-nav .m-nav__top .icon').on('click', function() {
             $('.m-nav').removeClass('open')
         })
+    })
+</script>
+<script>
+    $('#exzoom').exzoom({
+        "navWidth": 60,//列表每个宽度,该版本中请把宽高填写成一样
+        "navHeight": 60,//列表每个高度,该版本中请把宽高填写成一样
+        "navItemNum": 5,//列表显示个数
+        "navItemMargin": 7,//列表间隔
+        "navBorder": 1,//列表边框，没有边框填写0，边框在css中修改
+        "autoPlay": false,//是否自动播放
+        "autoPlayTimeout": 2000,//播放间隔时间
     })
 </script>
 </body>
