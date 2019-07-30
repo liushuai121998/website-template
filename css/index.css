@@ -7,7 +7,10 @@ html, body {
 .main {
     height: 100%;
 }
-
+.index-img {
+    /*height: 100%;*/
+    width: 100%;
+}
 /*header__nav start*/
 .header {
     width: 100%;
@@ -197,6 +200,91 @@ html, body {
 
 /*页面样式*/
 /*index 首页*/
+
+.index-company__slide {
+    position: relative;
+}
+.banner-content {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.banner-content:before {
+    content: "";
+    position: absolute;
+    width: 20%;
+    height: 40%;
+    display: block;
+    border: 10px solid rgba(255, 255, 255, 0.2);
+    top: 30%;
+    left: 10%;
+    transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
+    opacity: 0;
+    transform: translate3d(-80px, 0, 0);
+    z-index: 1;
+}
+.swiper-slide-active .banner-content:before {
+    transition-delay: 1.3s;
+    transform: translate3d(0px, 0, 0);
+    opacity: 1;
+}
+
+.picB {
+    width: 100%;
+    height: auto;
+}
+
+.picB .index-img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    transition: all 1s ease 2.5s;
+    transform: perspective(1000px) translate3d(0, 0, 100px);
+}
+
+.index-company__intro {
+    position: absolute;
+    left: 140px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+    color: #fff;
+    font-size: 0.825rem;
+}
+
+.index-company__intro * {
+    transform: translate3d(0, 80px, 0);
+    opacity: 0;
+}
+.swiper-slide-active .index-company__intro * {
+    transform: translate3d(0, 0px, 0);
+    opacity: 1;
+}
+.swiper-slide-active .en-title {
+    transition-delay: 0.7s;
+}
+.index-company__intro .title {
+    position: relative;
+    color: #FF9800;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    transition: all 2s ease;
+}
+
+.swiper-slide-active .title {
+    transition-delay: 0.5s;
+}
+
+.index-company__intro .en-title {
+    color: #fff;
+    font-size: 1.5rem;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    transition: all 2s ease;
+}
 
 /*    业务*/
 .core-news, .company-intro {
@@ -394,7 +482,7 @@ html, body {
 .product__list {
     width: 100%;
     height: auto;
-    margin-left: -20px;
+    /*margin-left: -20px;*/
 }
 .product__list .product__list-item {
     float: left;
@@ -458,8 +546,51 @@ html, body {
     border:#ccc solid 1px;
     font-size:12px;
 }
+.map-default {
+    display: none;
+}
 /**/
 
+/*product-detail*/
+.product-detail__title-wrap {
+    display: flex;
+}
+.product-detail__title {
+    flex: 1;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+.product-detail__title p {
+    margin-bottom: 20px;
+}
+.product-detail__title p:last-child {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+.product-detail__desc {
+    margin-top: 100px;
+}
+.product-detail__desc a {
+    padding: 20px 10px;
+}
+.product-detail__desc a.active {
+    color: #1890FF;
+    border-bottom: 2px solid #1890FF;
+    position: relative;
+}
+.product-detail__desc .tab-bar {
+    border-bottom: 1px solid #d9d9d9;
+}
+.product-detail__desc-content {
+    padding: 0 20px;
+    margin-top: 30px;
+    color: rgb(89, 89, 89);
+}
+.product-detail__btn-group {
+    padding: 20px;
+    margin-top: 40px;
+    color: rgb(89, 89, 89);
+}
 
 @media only screen and (max-width: 1024px) and (min-width: 769px){
     /*product*/
@@ -503,9 +634,23 @@ html, body {
     .product__list .product__list-item {
         width: 100%;
     }
+
+    .product-detail__title-wrap {
+        flex-direction: column;
+    }
+    .product-detail__title {
+        padding-left: 0;
+    }
     /**/
 
     .footer .contact__info>div {
         width: 100%;
+    }
+
+    #map {
+        display: none;
+    }
+    .map-default {
+        display: block;
     }
 }

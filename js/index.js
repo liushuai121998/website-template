@@ -39,13 +39,13 @@ $(function () {
         createItem(item, index) {
             return '<li class="news-center__list-item fl">\n' +
                 '                                <div class="news-center__list-item__title">\n' +
-                '                                    <a href="news-detail.html">'+item.title+'</a>\n' +
+                '                                    <a href="contacttail.html">'+item.title+'</a>\n' +
                 '                                </div>\n' +
                 '                                <div class="news-center__list-item__content">\n' +
                                                     item.content +
                 '                                </div>\n' +
                 '                                <div class="detail-btn fr">\n' +
-                '                                    <a href="news-detail.html">查看详情</a>\n' +
+                '                                    <a href="contacttail.html">查看详情</a>\n' +
                 '                                </div>\n' +
                 '                            </li>'
         }

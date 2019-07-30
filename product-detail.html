@@ -20,8 +20,122 @@
 
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/font.css">
-    <link rel="stylesheet" href="css/jquery.exzoom.css">
+    <link rel="stylesheet" href="css/font.css" />
+    <style>
+        #magnifier {
+            position: relative;
+            /*width: 450px;*/
+            /*margin: 54px 0 0 70px;*/
+            float: left;
+            flex: 1;
+        }
+
+        .small-box {
+            width: 100%;
+            position: relative;
+            /*width: 450px;*/
+            /*height: 450px;*/
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+        }
+
+        .small-box img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .small-box .hover {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #aaa;
+            background: #0099ff;
+            opacity: .5;
+            filter: alpha(opacity: 50);
+            cursor: move;
+        }
+
+        .thumbnail-box {
+            position: relative;
+            width: 100%;
+        }
+
+        .thumbnail-box .btn {
+            position: absolute;
+            top: 50%;
+            width: 22px;
+            height: 32px;
+            line-height: 32px;
+            margin-top: -16px;
+        }
+        .thumbnail-box .btn .icon {
+            font-size: 20px;
+        }
+
+        .thumbnail-box .btn-prev {
+            left: 0;
+            /*background: url(img/btn_prev.png) no-repeat;*/
+        }
+
+        .thumbnail-box .btn-next {
+            right: 0;
+            /*background: url(img/btn_next.png) no-repeat;*/
+        }
+
+        .thumbnail-box .list {
+            overflow: hidden;
+            width: 390px;
+            margin: 0 auto;
+        }
+
+        .thumbnail-box .wrapper {
+            width: 100000px;
+        }
+
+        .thumbnail-box .list .item {
+            float: left;
+            margin: 0 10px;
+        }
+
+        .thumbnail-box .list .item-cur {}
+
+        .thumbnail-box .list .item img {
+            border: 2px solid #fff;
+            width: 80px;
+            height: 80px;
+        }
+
+        .thumbnail-box .list .item-cur img {
+            border: 2px solid #e53e41;
+        }
+
+        .big-box {
+            display: none;
+            overflow: hidden;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #e4e4e4;
+            box-shadow: 2px 2px 10px #000;
+        }
+
+        .big-box img {
+            display: block;
+        }
+        @media only screen and (max-width: 768px) {
+            .thumbnail-box .list .item img {
+                width: 60px;
+                height: 60px;
+                border-radius: 20px 10px;
+            }
+        }
+    </style>
 </head>
 <body>
 <div class="main">
@@ -67,7 +181,7 @@
                         <a class="nav-link" href="./product.html">设计案例</a>
                     </li>
                     <li class="m-nav__item">
-                        <a class="nav-link" href="./concact.html">联系我们</a>
+                        <a class="nav-link" href="./contact.html">联系我们</a>
                     </li>
                 </ul>
             </div>
@@ -87,27 +201,58 @@
             <p>CASE</p>
         </div>
         <div class="product-detail">
-            <div class="exzoom" id="exzoom" style="width: 400px; height: 400px;">
-                <!--大图区域-->
-                <div class="exzoom_img_box">
-                    <ul class='exzoom_img_ul'>
-                        <li><img src="img/building.jpg"/></li>
-                        <li><img src="img/building.jpg"/></li>
-                        <li><img src="img/building.jpg"/></li>
-                        <li><img src="img/building.jpg"/></li>
-                        <li><img src="img/building.jpg"/></li>
-                        <li><img src="img/building.jpg"/></li>
-                        <li><img src="img/building.jpg"/></li>
-                        <li><img src="img/building.jpg"/></li>
-                    </ul>
+            <div class="clearfix product-detail__title-wrap">
+                <!--                -->
+                <div id="magnifier">
+                    <div class="small-box">
+                        <img src="img/building.jpg" alt="#">
+                        <span class="hover"></span>
+                    </div>
+                    <div class="thumbnail-box">
+                        <a href="javascript:;" class="btn btn-prev">
+                            <i class="icon icon-right-arrow"></i>
+                        </a>
+                        <a href="javascript:;" class="btn btn-next">
+                            <i class="icon icon-left-arrow"></i>
+                        </a>
+                        <div class="list">
+                            <ul class="wrapper">
+                                <li class="item item-cur" data-src="img/building.jpg"><img src="img/building.jpg" alt="#"></li>
+                                 <li class="item" data-src="img/office-building.jpg"><img src="img/office-building.jpg" alt="#"></li>
+<!--                                <li class="item" data-src="images/small_3.jpg"><img src="images/thumbnail_3.jpg" alt="#"></li>-->
+<!--                                <li class="item" data-src="images/small_4.jpg"><img src="images/thumbnail_4.jpg" alt="#"></li>-->
+<!--                                <li class="item" data-src="images/small_5.jpg"><img src="images/thumbnail_5.jpg" alt="#"></li>-->
+<!--                                <li class="item" data-src="images/small_6.jpg"><img src="images/thumbnail_6.jpg" alt="#"></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="big-box">
+                        <img src="img/building.jpg" alt="#">
+                    </div>
                 </div>
-                <!--缩略图导航-->
-                <div class="exzoom_nav"></div>
-                <!--控制按钮-->
-                <p class="exzoom_btn">
-                    <a href="javascript:void(0);" class="exzoom_prev_btn"> < </a>
-                    <a href="javascript:void(0);" class="exzoom_next_btn"> > </a>
-                </p>
+                <!--                -->
+                <div class="product-detail__title fl">
+                    <p class="fz-30">写字楼</p>
+                    <p>写字楼</p>
+                </div>
+            </div>
+            <div class="product-detail__desc">
+                <div class="tab-bar clearfix">
+                    <a href="javascript:;" class="active fl">产品描述</a>
+                </div>
+                <div class="product-detail__desc-content">
+                    写字楼
+                </div>
+            </div>
+            <div class="product-detail__btn-group clearfix">
+                <div class="prev-btn fl">
+                    <span>上一个</span>
+                    <a>无</a>
+                </div>
+                <div class="next-btn fr">
+                    <span>下一个</span>
+                    <a href="product-detail.html">建筑</a>
+                </div>
             </div>
         </div>
     </div>
@@ -151,7 +296,7 @@
     </div>
 </div>
 <script src="js/jquery.js"></script>
-<script src="js/jquery.exzoom.js"></script>
+<script src="js/magnifier.js"></script>
 <script>
     $(function () {
         // 移动端nav
@@ -164,15 +309,15 @@
     })
 </script>
 <script>
-    $('#exzoom').exzoom({
-        "navWidth": 60,//列表每个宽度,该版本中请把宽高填写成一样
-        "navHeight": 60,//列表每个高度,该版本中请把宽高填写成一样
-        "navItemNum": 5,//列表显示个数
-        "navItemMargin": 7,//列表间隔
-        "navBorder": 1,//列表边框，没有边框填写0，边框在css中修改
-        "autoPlay": false,//是否自动播放
-        "autoPlayTimeout": 2000,//播放间隔时间
-    })
+    $(function() {
+        if(document.documentElement.clientWidth <= 768) {
+            $('#magnifier').magnifier({
+                isDestory: true
+            });
+            return;
+        }
+        $('#magnifier').magnifier();
+    });
 </script>
 </body>
 </html>

@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'iconfont';  /* project id 1304902 */
-    src: url('//at.alicdn.com/t/font_1304902_y5etjh91xkr.eot');
-    src: url('//at.alicdn.com/t/font_1304902_y5etjh91xkr.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_1304902_y5etjh91xkr.woff2') format('woff2'),
-    url('//at.alicdn.com/t/font_1304902_y5etjh91xkr.woff') format('woff'),
-    url('//at.alicdn.com/t/font_1304902_y5etjh91xkr.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_1304902_y5etjh91xkr.svg#iconfont') format('svg');
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/iconfont.woff2') format('woff2'),
+    url('../font/iconfont.woff') format('woff'),
+    url('../font/iconfont.ttf') format('truetype'),
+    url('../font/iconfont.svg#iconfont') format('svg');
 }
 .icon {
     font-family: "iconfont" !important;
@@ -26,4 +26,10 @@
 
 .icon-link:before {
     content: '\e611';
+}
+.icon-left-arrow:before {
+    content: '\e600';
+}
+.icon-right-arrow:before {
+    content: '\e601';
 }
