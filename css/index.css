@@ -138,9 +138,9 @@ html, body {
 }
 .footer .footer__body {
     position: absolute;
-    left: 90px;
+    left: 50%;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
 }
 .footer .contact-us {
     margin-bottom: 30px;
@@ -154,6 +154,9 @@ html, body {
     color: #A9A9A9;
     font-size: 14px;
     line-height: 2;
+}
+.index-footer.footer .contact__info>div {
+    width: 100%;
 }
 .footer .contact__info a {
     color: #A9A9A9;
