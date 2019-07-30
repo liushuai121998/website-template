@@ -1,17 +1,23 @@
-html, body {
+html,
+body {
     height: 100%;
     width: 100%;
     font-family: sans-serif;
     font-size: 14px;
 }
+
 .main {
     height: 100%;
 }
+
 .index-img {
     /*height: 100%;*/
     width: 100%;
 }
+
+
 /*header__nav start*/
+
 .header {
     width: 100%;
     background: #fff;
@@ -22,6 +28,7 @@ html, body {
     z-index: 99;
     border-bottom: 1px solid #e9e9e9;
 }
+
 .logo-img {
     width: 154px;
     height: 32px;
@@ -29,15 +36,19 @@ html, body {
     margin-left: 50px;
     margin-bottom: 15px;
 }
+
 .header__logo {
     width: 32%;
 }
+
 .header__nav-wrap {
     width: 68%;
 }
+
 .header__nav {
     /*display: none;*/
 }
+
 .header__nav .header__nav-item {
     position: relative;
     float: left;
@@ -46,6 +57,7 @@ html, body {
 .header__nav .header__nav-item:hover:after {
     width: 100%;
 }
+
 .header__nav .header__nav-item:after {
     content: '';
     width: 0;
@@ -56,6 +68,7 @@ html, body {
     left: 0;
     transition: all 0.5s ease 0s;
 }
+
 .header__nav .nav-link {
     padding: 0 25px;
 }
@@ -67,16 +80,21 @@ html, body {
     font-size: 16px;
     line-height: 65px;
 }
+
+
 /*移动端*/
+
 .nav-toggle {
     padding-right: 30px;
     line-height: 65px;
     display: none;
 }
+
 .nav-toggle .icon {
     color: #000;
     font-size: 20px;
 }
+
 .m-nav {
     position: fixed;
     right: 0;
@@ -89,45 +107,59 @@ html, body {
     transform: translateX(100%);
     transition: all ease 0.5s;
 }
+
 .m-nav.open {
     transform: translateX(0);
 }
+
 .m-nav .m-nav__top {
     padding: 20px;
 }
+
 .m-nav .m-nav__top .icon {
     cursor: pointer;
     font-size: 30px;
     color: rgb(89, 89, 89);
 }
+
 .m-nav__content {
     margin-top: 30px;
 }
+
 .m-nav__content .m-nav__item {
     padding: 0 20px;
     border-bottom: 1px solid #f5f5f5;
     opacity: 0;
     transform: translateY(100%);
 }
+
 .m-nav__content .m-nav__item:nth-child(1) {
     transition: all .2s cubic-bezier(.77, 0, .175, 1) 0ms;
 }
+
 .m-nav__content .m-nav__item:nth-child(2) {
     transition: all .4s cubic-bezier(.77, 0, .175, 1) 0ms;
 }
+
 .m-nav__content .m-nav__item:nth-child(3) {
     transition: all .6s cubic-bezier(.77, 0, .175, 1) 0ms;
 }
+
 .m-nav__content .m-nav__item:nth-child(4) {
     transition: all .8s cubic-bezier(.77, 0, .175, 1) 0ms;
 }
+
 .m-nav.open .m-nav__content .m-nav__item {
     transform: translateY(0);
     opacity: 1;
 }
+
+
 /*header__nav end*/
 
+
 /*footer*/
+
 .footer {
     background: rgb(62, 62, 62);
     width: 100%;
@@ -136,18 +168,22 @@ html, body {
     color: #fff;
     position: relative;
 }
+
 .footer .footer__body {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
 .footer .contact-us {
     margin-bottom: 30px;
 }
+
 .footer .contact__info>.company {
     width: 100%;
 }
+
 .footer .contact__info>div {
     width: 50%;
     float: left;
@@ -155,33 +191,43 @@ html, body {
     font-size: 14px;
     line-height: 2;
 }
+
 .index-footer.footer .contact__info>div {
     width: 100%;
 }
+
 .footer .contact__info a {
     color: #A9A9A9;
 }
+
 .footer .contact__info img {
     margin-top: 15px;
 }
+
+
 /**/
 
 
 /*swiper start*/
+
 .main .swiper-container {
     height: 100%;
 }
+
 .swiper-wrapper {
     height: 100%;
 }
+
 .swiper-container .swiper-pagination.swiper-pagination-bullets {
     right: 30px;
 }
+
 .swiper-container .swiper-pagination .swiper-pagination-bullet {
     width: 16px;
     height: 16px;
     position: relative;
 }
+
 .swiper-container .swiper-pagination .swiper-pagination-bullet-active:before {
     position: absolute;
     content: '';
@@ -190,42 +236,51 @@ html, body {
     background: transparent;
     border: 1px solid #007aff;
     border-radius: 100%;
-    left: -3px;
-    top: -3px;
+    left: -2px;
+    top: -2px;
 }
+
 .swiper-slide {
     padding-top: 65px;
     box-sizing: border-box;
     overflow-y: hidden;
 }
+
+
 /*swiper end*/
 
 
 /*页面样式*/
+
+
 /*index 首页*/
 
 .index-company__slide {
     position: relative;
 }
+
 .banner-content {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 100%;
 }
+
 .banner-content:before {
     content: "";
     position: absolute;
-    width: 20%;
-    height: 40%;
+    width: 200px;
+    height: 280px;
     display: block;
     border: 10px solid rgba(255, 255, 255, 0.2);
-    top: 30%;
-    left: 10%;
+    top: 50%;
+    margin-top: -140px;
+    left: 100px;
     transition: all 2s cubic-bezier(0.42, 0, 0.58, 1);
     opacity: 0;
     transform: translate3d(-80px, 0, 0);
     z-index: 1;
 }
+
 .swiper-slide-active .banner-content:before {
     transition-delay: 1.3s;
     transform: translate3d(0px, 0, 0);
@@ -259,13 +314,16 @@ html, body {
     transform: translate3d(0, 80px, 0);
     opacity: 0;
 }
+
 .swiper-slide-active .index-company__intro * {
     transform: translate3d(0, 0px, 0);
     opacity: 1;
 }
+
 .swiper-slide-active .en-title {
     transition-delay: 0.7s;
 }
+
 .index-company__intro .title {
     position: relative;
     color: #FF9800;
@@ -289,14 +347,18 @@ html, body {
     transition: all 2s ease;
 }
 
+
 /*    业务*/
-.core-news, .company-intro {
+
+.core-news,
+.company-intro {
     max-width: 1240px;
     margin-left: auto;
     margin-right: auto;
     padding: 50px 20px 0;
     height: 100%;
 }
+
 .core-news__title p {
     text-align: center;
     font-size: 24px;
@@ -307,6 +369,7 @@ html, body {
     line-height: 3;
     font-size: 14px;
 }
+
 .core-news__title .sub-text:after {
     content: '';
     display: block;
@@ -315,10 +378,12 @@ html, body {
     background: #000;
     margin: 0 auto;
 }
+
 .core-news__list {
     width: 100%;
     margin-top: 50px;
 }
+
 .core-news__list .core_news__list-item {
     width: 25%;
     height: auto;
@@ -327,22 +392,28 @@ html, body {
     background: rgb(249, 249, 249);
     box-sizing: border-box;
 }
+
 .core-news__list .core_news__list-item:hover {
     background: rgb(240, 240, 240);
 }
+
 .core_news__list-item__img {
     width: 68px;
     height: 62px;
     margin: 30px auto 10px;
 }
+
 .core-news__list-item__info p {
     text-align: center;
     line-height: 2;
     color: rgb(89, 89, 89);
 }
 
+
 /*企业介绍*/
-.company-intro__img, .company-intro__content {
+
+.company-intro__img,
+.company-intro__content {
     width: 49%;
 }
 
@@ -350,18 +421,23 @@ html, body {
     margin-right: 2%;
     display: block;
 }
+
 .company-intro__img img {
     width: 100%;
 }
-.company-intro__title .text, .company-intro__title .sub-text{
+
+.company-intro__title .text,
+.company-intro__title .sub-text {
     margin-right: 10px;
     color: rgb(89, 89, 89);
 }
+
 .company-intro__desc {
     color: #808080;
     margin: 20px 0 40px;
     line-height: 1.8;
 }
+
 .more-btn a {
     display: inline-block;
     padding: 0 20px;
@@ -373,10 +449,13 @@ html, body {
     color: #fff;
 }
 
+
 /*新闻资讯*/
+
 .news-center__list {
     width: 100%;
 }
+
 .news-center__list-item {
     width: calc((100% - 120px) / 3);
     margin: 20px;
@@ -385,6 +464,7 @@ html, body {
     overflow: hidden;
     box-sizing: border-box;
 }
+
 .news-center__list-item__title {
     border-bottom: 1px solid #e9e9e9;
     padding-top: 5px;
@@ -392,10 +472,12 @@ html, body {
     position: relative;
     margin-bottom: 10px;
 }
+
 .news-center__list-item__title a {
     color: #707070;
     font-size: 14px;
 }
+
 .news-center__list-item__title:before {
     content: '';
     position: absolute;
@@ -406,12 +488,16 @@ html, body {
     width: 0%;
     transition: all .5s ease-in-out;
 }
+
 .news-center__list-item__title:hover:before {
     width: 100%;
 }
-.news-center__list-item__title a:hover, .news-center__list-item__title a:active {
+
+.news-center__list-item__title a:hover,
+.news-center__list-item__title a:active {
     color: #60a9d7;
 }
+
 .news-center__list-item__content {
     margin: 20px 0;
     color: #ccc;
@@ -422,25 +508,34 @@ html, body {
     -webkit-line-clamp: 3;
     overflow: hidden;
 }
-.detail-btn a{
+
+.detail-btn a {
     border: 1px solid #d9d9d9;
     padding: 5px 10px;
     color: #707070;
     display: inline-block;
 }
+
 .detail-btn a:hover {
     color: #60a9d7;
 }
 
+
 /*联系我们*/
+
 .index-footer {
     height: 100%;
 }
 
+
 /*index end*/
 
+
 /*intro 简介*/
-.intro, .product, .contact {
+
+.intro,
+.product,
+.contact {
     height: auto;
     margin-top: 80px;
     margin-bottom: 50px;
@@ -450,25 +545,33 @@ html, body {
     margin-right: auto;
     padding: 80px 20px;
 }
+
 .intro__body {
     margin: 20px 0;
     padding-left: 5px;
     padding-right: 5px;
 }
+
 .intro__body p {
     font-size: 14px;
     line-height: 2;
     text-indent: 2em;
     color: rgb(89, 89, 89);
 }
+
 .intro__body .intro__body-img {
-    margin-right: 30px;
-    margin-left: 30px;
-    height: 316px;
+    /* margin-right: 30px;
+    margin-left: 30px; */
+    min-height: 360px;
+    width: 100%;
 }
-.crumb-nav a, .crumb-nav span, .about-us p{
+
+.crumb-nav a,
+.crumb-nav span,
+.about-us p {
     color: rgb(51, 51, 51);
 }
+
 .about-us {
     margin-top: 30px;
     margin-bottom: 50px;
@@ -478,15 +581,19 @@ html, body {
     font-size: 24px;
     color: rgb(89, 89, 89);
 }
+
+
 /**/
 
 
 /*product*/
+
 .product__list {
     width: 100%;
     height: auto;
     /*margin-left: -20px;*/
 }
+
 .product__list .product__list-item {
     float: left;
     padding: 20px;
@@ -494,23 +601,28 @@ html, body {
     box-sizing: border-box;
     cursor: pointer;
 }
+
 .product__list .product__list-item:hover .product__list-item-link {
     box-shadow: 0px 0px 1rem #ccc;
 }
+
 .product__list .product__list-item:hover .product__list-item__img-wrap img {
     transform: translateX(-50%) translateY(-50%) scale(1.1);
 }
+
 .product__list-item-link {
     display: block;
     width: 100%;
     transition: all .5s ease;
 }
+
 .product__list-item__img-wrap {
     position: relative;
     width: 100%;
     height: 240px;
     overflow: hidden;
 }
+
 .product__list-item__img-wrap img {
     position: absolute;
     left: 50%;
@@ -520,82 +632,105 @@ html, body {
     height: auto;
     transition: all .5s ease;
 }
+
 .product__list-item__txt {
     padding: 20px 20px 0;
     background: #fff;
 }
+
 .product__list-item__txt .txt {
     border-bottom: 1px solid #e9e9e9;
     height: 50px;
 }
+
 .product__list-item__txt span {
     color: #333;
     font-size: 22px;
     font-weight: 700;
 }
+
 .product__list-item__txt .icon {
     font-size: 22px;
     color: #A9A9A9;
 }
+
+
 /**/
 
+
 /*contact*/
+
 .contact__map {
     overflow: hidden;
 }
+
 .contact #map {
-    width:1600px;
-    height:550px;
-    border:#ccc solid 1px;
-    font-size:12px;
+    width: 1600px;
+    height: 550px;
+    border: #ccc solid 1px;
+    font-size: 12px;
 }
+
 .map-default {
     display: none;
 }
+
+
 /**/
 
+
 /*product-detail*/
+
 .product-detail__title-wrap {
     display: flex;
 }
+
 .product-detail__title {
     flex: 1;
     margin-top: 20px;
     padding-left: 20px;
 }
+
 .product-detail__title p {
     margin-bottom: 20px;
 }
+
 .product-detail__title p:last-child {
     padding-bottom: 20px;
     border-bottom: 1px solid #ccc;
 }
+
 .product-detail__desc {
     margin-top: 100px;
 }
+
 .product-detail__desc a {
     padding: 20px 10px;
 }
+
 .product-detail__desc a.active {
     color: #1890FF;
     border-bottom: 2px solid #1890FF;
     position: relative;
 }
+
 .product-detail__desc .tab-bar {
     border-bottom: 1px solid #d9d9d9;
 }
+
 .product-detail__desc-content {
     padding: 0 20px;
     margin-top: 30px;
     color: rgb(89, 89, 89);
 }
+
 .product-detail__btn-group {
     padding: 20px;
     margin-top: 40px;
     color: rgb(89, 89, 89);
 }
 
-@media only screen and (max-width: 1024px) and (min-width: 769px){
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
     /*product*/
     .product__list .product__list-item {
         width: 50%;
@@ -604,16 +739,15 @@ html, body {
 }
 
 @media only screen and (max-width: 768px) {
-/*    自适应适配 小于768*/
-/*    header*/
+    /*    自适应适配 小于768*/
+    /*    header*/
     .header__nav-content {
         display: none;
     }
     .nav-toggle {
         display: block;
     }
-
-/*    index*/
+    /*    index*/
     .company-intro__img {
         display: none;
     }
@@ -623,21 +757,19 @@ html, body {
     .news-center__list-item {
         width: calc(100% - 60px);
     }
-
-/*    intro*/
+    /*    intro*/
     .intro__body .intro__body-img {
         height: auto;
+        min-height: 280px;
         width: 100%;
         margin-left: 0;
         margin-right: 0;
     }
-/*    */
-
+    /*    */
     /*product*/
     .product__list .product__list-item {
         width: 100%;
     }
-
     .product-detail__title-wrap {
         flex-direction: column;
     }
@@ -645,11 +777,9 @@ html, body {
         padding-left: 0;
     }
     /**/
-
     .footer .contact__info>div {
         width: 100%;
     }
-
     #map {
         display: none;
     }

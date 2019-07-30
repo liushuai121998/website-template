@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>北京网站建设有限公司</title>
@@ -17,11 +18,12 @@
     <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
     <![endif]-->
-
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/font.css">
 </head>
+
 <body>
     <div class="main">
         <div class="header cleaarfix">
@@ -80,21 +82,25 @@
                 <span>公司简介</span>
             </div>
             <div class="about-us">
-                <p class="text">关于我们</p>
+                <p class="text mb-15">关于我们</p>
                 <p>ABOUT US</p>
             </div>
-            <div class="intro__body">
-                <img class="fr intro__body-img" src="img/intro-img.jpg" alt="公司简介">
-                <p>本公司拥有完整、科学的质量管理体系。我们的诚信、实力和产品质量获得业界的广泛认可。</p>
-                <p>本着“敢于创新，稳重求进”的精神，大胆引进先进自动化生产设备，加强生产管理、严把质量关，经全面改造的公司，以其产品质量稳定、交货快捷和价格优势，在激烈的竞争市场中脱颖而出，稳步发展。</p>
-                <p>本司将致力于不断的改进产品生产工艺和品质，并且不断的发展新的产品去保持市场的竞争能力。正朝着现代企业的方向与时间一同前进。以“真诚、务实、优质、高效”为企业宗旨，竭诚为各界人士服务。</p>
-                <p>本司将以饱满的热情和精神，一如既往，视质量、信誉如生命，不断创新创好，提高质量，以答谢新老客商多年来的支持与厚爱，同时欢迎国内外客商莅临指导。</p>
+            <div class="intro__body row clearfix">
+                <div class="fr">
+                    <img class="intro__body-img img-responsive" src="img/intro-img.jpg" alt="公司简介">
+                </div>
+                <div class="">
+                    <p>本公司拥有完整、科学的质量管理体系。我们的诚信、实力和产品质量获得业界的广泛认可。</p>
+                    <p>本着“敢于创新，稳重求进”的精神，大胆引进先进自动化生产设备，加强生产管理、严把质量关，经全面改造的公司，以其产品质量稳定、交货快捷和价格优势，在激烈的竞争市场中脱颖而出，稳步发展。</p>
+                    <p>本司将致力于不断的改进产品生产工艺和品质，并且不断的发展新的产品去保持市场的竞争能力。正朝着现代企业的方向与时间一同前进。以“真诚、务实、优质、高效”为企业宗旨，竭诚为各界人士服务。</p>
+                    <p>本司将以饱满的热情和精神，一如既往，视质量、信誉如生命，不断创新创好，提高质量，以答谢新老客商多年来的支持与厚爱，同时欢迎国内外客商莅临指导。</p>
+                </div>
             </div>
         </div>
         <div class="footer">
-            <div class="footer__body">
+            <div class="footer__body col-md-8">
                 <div class="contact-us">
-                    <p style="font-size: 24px">联系我们</p>
+                    <p style="font-size: 24px" class="mb-15">联系我们</p>
                     <p>CONTACT</p>
                 </div>
                 <div class="contact__info clearfix">
@@ -131,9 +137,10 @@
         </div>
     </div>
     <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script>
-        $(function () {
-        // 移动端nav
+        $(function() {
+            // 移动端nav
             $('.nav-toggle').on('click', function() {
                 $('.m-nav').addClass('open');
             })
@@ -143,4 +150,5 @@
         })
     </script>
 </body>
+
 </html>
