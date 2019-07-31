@@ -28,7 +28,7 @@
 
             var scaleX = this.$bigBox_pic.width() / this.$smallBox_pic.width()
             var scaleY = this.$bigBox_pic.height() / this.$smallBox_pic.height()
-            this.$bigBox.scrollLeft(this.$smallBox_mask.position().left*scaleX).scrollTop(this.$smallBox_mask.position().top*scaleY)
+            this.$bigBox.scrollLeft(this.$smallBox_mask.position().left * scaleX).scrollTop(this.$smallBox_mask.position().top * scaleY)
         },
         changeSrouce: function(index, cur_src) {
             this.$smallBox_pic.attr('src', cur_src);
@@ -61,41 +61,52 @@
                 $(this).addClass('item-cur');
                 self.changeSrouce($(this).index(), cur_src);
             });
-            if(!this.isDestory) {
+            if (!this.isDestory) {
                 this.$smallBox.hover(function() {
-                    self.$bigBox.show();
-                    self.$smallBox_mask.show();
-                    self.setMask();
-                    $(this).mousemove(function(ev) {
-
-                        var oEvent = ev || window.event;
-
-                        //mask 位置
-                        var offset_pos = {
-                            left: oEvent.clientX - $(this).offset().left - self.$smallBox_mask.width() / 2,
-                            top: oEvent.clientY - $(this).offset().top - self.$smallBox_mask.height() / 2 + $(window).scrollTop()
-                        };
-                        if (offset_pos.left < 0) {
-                            offset_pos.left = 0;
-                        } else if (offset_pos.left > $(this).width() - self.$smallBox_mask.width()) {
-                            offset_pos.left = $(this).width() - self.$smallBox_mask.width();
-                        }
-                        if (offset_pos.top < 0) {
-                            offset_pos.top = 0;
-                        } else if (offset_pos.top > $(this).height() - self.$smallBox_mask.height()) {
-                            offset_pos.top = $(this).height() - self.$smallBox_mask.height();
-                        }
-
-                        self.$smallBox_mask.css(offset_pos);
-                        self.moveBigPic();
-                    });
+                    self.mouseEnter($(this))
                 }, function() {
-                    self.$smallBox_mask.hide();
-                    self.$bigBox.hide();
+                    // self.$smallBox_mask.hide();
+                    // self.$bigBox.hide();
+                    self.mouseLeave()
                 });
             }
+            return this
         },
-        constructor: Magnifier
+        constructor: Magnifier,
+        mouseEnter: function($this) {
+            var self = this
+            self.$bigBox.show();
+            self.$smallBox_mask.show();
+            self.setMask();
+            $this.mousemove(function(ev) {
+
+                var oEvent = ev || window.event;
+
+                //mask 位置
+                var offset_pos = {
+                    left: oEvent.clientX - $(this).offset().left - self.$smallBox_mask.width() / 2,
+                    top: oEvent.clientY - $(this).offset().top - self.$smallBox_mask.height() / 2 + $(window).scrollTop()
+                };
+                if (offset_pos.left < 0) {
+                    offset_pos.left = 0;
+                } else if (offset_pos.left > $(this).width() - self.$smallBox_mask.width()) {
+                    offset_pos.left = $(this).width() - self.$smallBox_mask.width();
+                }
+                if (offset_pos.top < 0) {
+                    offset_pos.top = 0;
+                } else if (offset_pos.top > $(this).height() - self.$smallBox_mask.height()) {
+                    offset_pos.top = $(this).height() - self.$smallBox_mask.height();
+                }
+
+                self.$smallBox_mask.css(offset_pos);
+                self.moveBigPic();
+            });
+        },
+        mouseLeave: function() {
+            var self = this
+            self.$smallBox_mask.hide();
+            self.$bigBox.hide();
+        }
     };
     $.fn.magnifier = function(options) { var magnifier = new Magnifier(this, options); return magnifier.inital(); };
 })(jQuery, window, document);

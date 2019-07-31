@@ -693,7 +693,7 @@ body {
     margin-bottom: 20px;
 }
 
-.product-detail__title p:last-child {
+.product-detail__title p:last-of-type {
     padding-bottom: 20px;
     border-bottom: 1px solid #ccc;
 }
@@ -717,13 +717,13 @@ body {
 }
 
 .product-detail__desc-content {
-    padding: 0 20px;
+    /* padding: 0 20px; */
     margin-top: 30px;
     color: rgb(89, 89, 89);
 }
 
 .product-detail__btn-group {
-    padding: 20px;
+    /* padding: 20px; */
     margin-top: 40px;
     color: rgb(89, 89, 89);
 }
