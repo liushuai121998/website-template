@@ -140,7 +140,9 @@ a {
     text-decoration: none;
 }
 
-
+a:hover {
+    text-decoration: none;
+}
 /*清除浮动*/
 
 .clearfix:before,

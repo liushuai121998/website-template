@@ -17,7 +17,7 @@
     <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
     <![endif]-->
-
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/font.css" />
@@ -88,8 +88,11 @@
 
         .thumbnail-box .list {
             overflow: hidden;
+            /*width: 100%;*/
             width: 390px;
-            margin: 0 auto;
+            /*margin: 0 auto;*/
+            margin-left: 30px;
+            margin-right: 30px;
         }
 
         .thumbnail-box .wrapper {
@@ -132,7 +135,7 @@
             .thumbnail-box .list .item img {
                 width: 60px;
                 height: 60px;
-                border-radius: 20px 10px;
+                /*border-radius: 20px 10px;*/
             }
         }
     </style>
@@ -257,9 +260,9 @@
         </div>
     </div>
     <div class="footer">
-        <div class="footer__body">
+        <div class="footer__body col-md-8">
             <div class="contact-us">
-                <p style="font-size: 24px">联系我们</p>
+                <p class="fz-24 mb-15">联系我们</p>
                 <p>CONTACT</p>
             </div>
             <div class="contact__info clearfix">
@@ -296,6 +299,7 @@
     </div>
 </div>
 <script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/magnifier.js"></script>
 <script>
     $(function () {
@@ -316,7 +320,12 @@
             });
             return;
         }
-        $('#magnifier').magnifier();
+        var $magnifier = $('#magnifier').magnifier();
+        window.onresize = function() {
+            if(document.documentElement.clientWidth <= 768) {
+
+            }
+        }
     });
 </script>
 </body>

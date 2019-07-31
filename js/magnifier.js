@@ -20,23 +20,39 @@
     };
     Magnifier.prototype = {
         moveBigPic: function() {
-            var scaleX = this.$smallBox_mask.position().left / (this.$smallBox.width() - this.$smallBox_mask.width());
-            var scaleY = this.$smallBox_mask.position().top / (this.$smallBox.height() - this.$smallBox_mask.height());
-            var scroll_l = scaleX * (this.$bigBox_pic.width() - this.$bigBox.width());
-            var scroll_t = scaleY * (this.$bigBox_pic.height() - this.$bigBox.height());
-            this.$bigBox.scrollLeft(scroll_l).scrollTop(scroll_t);
+            // var scaleX = this.$smallBox_mask.position().left / (this.$smallBox.width() - this.$smallBox_mask.width());
+            // var scaleY = this.$smallBox_mask.position().top / (this.$smallBox.height() - this.$smallBox_mask.height());
+            // var scroll_l = scaleX * (this.$bigBox_pic.width() - this.$bigBox.width());
+            // var scroll_t = scaleY * (this.$bigBox_pic.height() - this.$bigBox.height());
+            // this.$bigBox.scrollLeft(scroll_l).scrollTop(scroll_t);
+
+            var scaleX = this.$bigBox_pic.width() / this.$smallBox_pic.width()
+            var scaleY = this.$bigBox_pic.height() / this.$smallBox_pic.height()
+            this.$bigBox.scrollLeft(this.$smallBox_mask.position().left*scaleX).scrollTop(this.$smallBox_mask.position().top*scaleY)
         },
         changeSrouce: function(index, cur_src) {
             this.$smallBox_pic.attr('src', cur_src);
             this.$bigBox_pic.attr('src', cur_src);
         },
         setMask: function() {
-            var mask_w = this.$smallBox.width() / (this.$bigBox_pic.width() / this.$bigBox.width());
-            var mask_h = this.$smallBox.height() / (this.$bigBox_pic.height() / this.$bigBox.height());
-            this.$smallBox_mask.css({ width: mask_w, height: mask_h });
+            // var mask_w = this.$smallBox.width() / (this.$bigBox_pic.width() / this.$bigBox.width());
+            // var mask_h = this.$smallBox.height() / (this.$bigBox_pic.height() / this.$bigBox.height());
+            // this.$smallBox_mask.css({ width: mask_w, height: mask_h });
+
+            this.$smallBox_mask.css({
+                width: 100,
+                height: 100
+            })
         },
         inital: function() {
             var self = this;
+
+            // 设置大图的宽高
+            this.$bigBox_pic.css({
+                width: this.$smallBox_pic.width() * 2,
+                height: this.$smallBox_pic.height() * 2
+            })
+
             this.$thumbnailBox_next.click(function() { var ov_pic = self.$thumbnailBox_item.length - 5; var ov_dis = ov_pic * 78; if (ov_pic > 0) { self.$thumbnailBox_wrapper.animate({ marginLeft: -ov_dis }); } });
             this.$thumbnailBox_prev.click(function() { self.$thumbnailBox_wrapper.animate({ marginLeft: 0 }); });
             this.$thumbnailBox_item.mouseover(function() {
@@ -51,10 +67,25 @@
                     self.$smallBox_mask.show();
                     self.setMask();
                     $(this).mousemove(function(ev) {
+
                         var oEvent = ev || window.event;
-                        var offset_pos = { left: oEvent.clientX - $(this).offset().left - self.$smallBox_mask.width() / 2, top: oEvent.clientY - $(this).offset().top - self.$smallBox_mask.height() / 2 + $(window).scrollTop() };
-                        if (offset_pos.left < 0) { offset_pos.left = 0; } else if (offset_pos.left > $(this).width() - self.$smallBox_mask.width()) { offset_pos.left = $(this).width() - self.$smallBox_mask.width(); }
-                        if (offset_pos.top < 0) { offset_pos.top = 0; } else if (offset_pos.top > $(this).height() - self.$smallBox_mask.height()) { offset_pos.top = $(this).height() - self.$smallBox_mask.height(); }
+
+                        //mask 位置
+                        var offset_pos = {
+                            left: oEvent.clientX - $(this).offset().left - self.$smallBox_mask.width() / 2,
+                            top: oEvent.clientY - $(this).offset().top - self.$smallBox_mask.height() / 2 + $(window).scrollTop()
+                        };
+                        if (offset_pos.left < 0) {
+                            offset_pos.left = 0;
+                        } else if (offset_pos.left > $(this).width() - self.$smallBox_mask.width()) {
+                            offset_pos.left = $(this).width() - self.$smallBox_mask.width();
+                        }
+                        if (offset_pos.top < 0) {
+                            offset_pos.top = 0;
+                        } else if (offset_pos.top > $(this).height() - self.$smallBox_mask.height()) {
+                            offset_pos.top = $(this).height() - self.$smallBox_mask.height();
+                        }
+
                         self.$smallBox_mask.css(offset_pos);
                         self.moveBigPic();
                     });
