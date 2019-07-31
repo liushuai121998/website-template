@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>北京网站建设有限公司</title>
@@ -24,6 +25,7 @@
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/swiper.min.css">
 </head>
+
 <body>
     <div class="main">
         <div class="header cleaarfix">
@@ -78,7 +80,7 @@
                 <div class="swiper-slide index-company__slide" data-hash="page1">
                     <div class="banner-content">
                         <!-- 图片开始 -->
-                        <div class="picB" >
+                        <div class="picB">
                             <img class="index-img" src="img/building.jpg" alt="">
                         </div>
                         <!-- 图片结束 -->
@@ -171,125 +173,132 @@
                 </div>
                 <div class="swiper-slide" data-hash="page6">
                     <div class="footer index-footer">
-                        <div class="col-md-5" style="height:100%">
+                        <div class="col-md-6 col-xs-12" style="height:100%">
                             <div class="footer__body ">
-                            <div class="contact-us">
-                                <p class="fz-24">联系我们</p>
-                                <p>CONTACT</p>
-                            </div>
-                            <div class="contact__info clearfix">
-                                <div class="company">
-                                    <label>公司名称：</label>
-                                    <span>北京网站建设有限公司</span>
+                                <div class="contact-us">
+                                    <p class="fz-24 mb-15">联系我们</p>
+                                    <p>CONTACT</p>
                                 </div>
-                                <div class="adress">
-                                    <label>地址：</label>
-                                    <span>北京市亦庄经济开发区数码庄园</span>
+                                <div class="contact__info clearfix">
+                                    <div class="company">
+                                        <label>公司名称：</label>
+                                        <span>北京网站建设有限公司</span>
+                                    </div>
+                                    <div class="adress">
+                                        <label>地址：</label>
+                                        <span>北京市亦庄经济开发区数码庄园</span>
+                                    </div>
+                                    <div class="tel">
+                                        <label>电话：</label>
+                                        <span>010-87120000</span>
+                                    </div>
+                                    <div class="mobile">
+                                        <label>手机：</label>
+                                        <span>18888888888</span>
+                                    </div>
+                                    <div class="email">
+                                        <label>邮箱：</label>
+                                        <span>demo@demo.com</span>
+                                    </div>
+                                    <div class="hot-tel">
+                                        <label>客服热线：</label>
+                                        <span>400-0000-0000</span>
+                                    </div>
+                                    <div class="copy-right">
+                                        <a href="http://beian.miit.gov.cn/">京ICP证010249-2</a>
+                                    </div>
+                                    <img src="img/footer-contact.jpg" alt="描述信息">
                                 </div>
-                                <div class="tel">
-                                    <label>电话：</label>
-                                    <span>010-87120000</span>
-                                </div>
-                                <div class="mobile">
-                                    <label>手机：</label>
-                                    <span>18888888888</span>
-                                </div>
-                                <div class="email">
-                                    <label>邮箱：</label>
-                                    <span>demo@demo.com</span>
-                                </div>
-                                <div class="hot-tel">
-                                    <label>客服热线：</label>
-                                    <span>400-0000-0000</span>
-                                </div>
-                                <div class="copy-right">
-                                    <a href="http://beian.miit.gov.cn/">京ICP证010249-2</a>
-                                </div>
-                                <img src="img/footer-contact.jpg" alt="描述信息">
                             </div>
                         </div>
-                        </div>
-                        <div class="col-md-7" style="height:100%">
+                        <div class="col-md-6" style="height:100%">
                             <div class="contact__map" style="height: 100%">
-                            <div id="map" style="width: 80%; height: 80%; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 10px;">
-                                <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&amp;ak=ZYYygwMeDvWX8d8nm8kPe86hEzPYYGL5"></script>
-                                <script type="text/javascript">
-                                    //创建和初始化地图函数：
-                                    function initMap() {
-                                        createMap();//创建地图
-                                        setMapEvent();//设置地图事件
-                                        addMapControl();//向地图添加控件
-                                        addMapOverlay();//向地图添加覆盖物
-                                    }
+                                <div id="map" style="width: 80%; height: 80%; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 10px;">
+                                    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&amp;ak=ZYYygwMeDvWX8d8nm8kPe86hEzPYYGL5"></script>
+                                    <script type="text/javascript">
+                                        //创建和初始化地图函数：
+                                        function initMap() {
+                                            createMap(); //创建地图
+                                            setMapEvent(); //设置地图事件
+                                            addMapControl(); //向地图添加控件
+                                            addMapOverlay(); //向地图添加覆盖物
+                                        }
 
-                                    function createMap() {
-                                        map = new BMap.Map("map");
-                                        map.centerAndZoom(new BMap.Point(116.513585, 39.783076), 13);
-                                    }
+                                        function createMap() {
+                                            map = new BMap.Map("map");
+                                            map.centerAndZoom(new BMap.Point(116.513585, 39.783076), 13);
+                                        }
 
-                                    function setMapEvent() {
-                                        map.enableScrollWheelZoom();
-                                        map.enableKeyboard();
-                                        map.enableDragging();
-                                        map.enableDoubleClickZoom()
-                                    }
+                                        function setMapEvent() {
+                                            map.enableScrollWheelZoom();
+                                            map.enableKeyboard();
+                                            map.enableDragging();
+                                            map.enableDoubleClickZoom()
+                                        }
 
-                                    function addClickHandler(target, window) {
-                                        target.addEventListener("click", function () {
-                                            target.openInfoWindow(window);
-                                        });
-                                    }
+                                        function addClickHandler(target, window) {
+                                            target.addEventListener("click", function() {
+                                                target.openInfoWindow(window);
+                                            });
+                                        }
 
-                                    function addMapOverlay() {
-                                        var markers = [
-                                            {
+                                        function addMapOverlay() {
+                                            var markers = [{
                                                 content: "北京市亦庄经济开发区数码庄园",
                                                 title: "北京网站建设有限公司",
-                                                imageOffset: {width: 0, height: 3},
-                                                position: {lat: 39.788239, lng: 116.506633}
-                                            }
-                                        ];
-                                        for (var index = 0; index < markers.length; index++) {
-                                            var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);
-                                            var marker = new BMap.Marker(point, {
-                                                icon: new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png", new BMap.Size(20, 25), {
-                                                    imageOffset: new BMap.Size(markers[index].imageOffset.width, markers[index].imageOffset.height)
-                                                })
-                                            });
-                                            var label = new BMap.Label(markers[index].title, {offset: new BMap.Size(25, 5)});
-                                            var opts = {
-                                                width: 200,
-                                                title: markers[index].title,
-                                                enableMessage: false
+                                                imageOffset: {
+                                                    width: 0,
+                                                    height: 3
+                                                },
+                                                position: {
+                                                    lat: 39.788239,
+                                                    lng: 116.506633
+                                                }
+                                            }];
+                                            for (var index = 0; index < markers.length; index++) {
+                                                var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);
+                                                var marker = new BMap.Marker(point, {
+                                                    icon: new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png", new BMap.Size(20, 25), {
+                                                        imageOffset: new BMap.Size(markers[index].imageOffset.width, markers[index].imageOffset.height)
+                                                    })
+                                                });
+                                                var label = new BMap.Label(markers[index].title, {
+                                                    offset: new BMap.Size(25, 5)
+                                                });
+                                                var opts = {
+                                                    width: 200,
+                                                    title: markers[index].title,
+                                                    enableMessage: false
+                                                };
+                                                var infoWindow = new BMap.InfoWindow(markers[index].content, opts);
+                                                marker.setLabel(label);
+                                                addClickHandler(marker, infoWindow);
+                                                map.addOverlay(marker);
                                             };
-                                            var infoWindow = new BMap.InfoWindow(markers[index].content, opts);
-                                            marker.setLabel(label);
-                                            addClickHandler(marker, infoWindow);
-                                            map.addOverlay(marker);
                                         }
-                                        ;
-                                    }
 
-                                    //向地图添加控件
-                                    function addMapControl() {
-                                        var scaleControl = new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT});
-                                        scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
-                                        map.addControl(scaleControl);
-                                        var navControl = new BMap.NavigationControl({
-                                            anchor: BMAP_ANCHOR_TOP_LEFT,
-                                            type: BMAP_NAVIGATION_CONTROL_LARGE
-                                        });
-                                        map.addControl(navControl);
-                                    }
+                                        //向地图添加控件
+                                        function addMapControl() {
+                                            var scaleControl = new BMap.ScaleControl({
+                                                anchor: BMAP_ANCHOR_BOTTOM_LEFT
+                                            });
+                                            scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+                                            map.addControl(scaleControl);
+                                            var navControl = new BMap.NavigationControl({
+                                                anchor: BMAP_ANCHOR_TOP_LEFT,
+                                                type: BMAP_NAVIGATION_CONTROL_LARGE
+                                            });
+                                            map.addControl(navControl);
+                                        }
 
-                                    var map;
-                                    initMap();
-                                </script>
+                                        var map;
+                                        initMap();
+                                    </script>
+                                </div>
+                                <div class="map-default">
+                                    <img src="img/map.jpg" alt="">
+                                </div>
                             </div>
-                            <div class="map-default">
-                                <img src="img/map.jpg" alt="">
-                            </div>
-                        </div>
                         </div>
                     </div>
                 </div>
@@ -298,11 +307,11 @@
             <div class="swiper-pagination"></div>
 
             <!-- 如果需要导航按钮 -->
-<!--            <div class="swiper-button-prev"></div>-->
-<!--            <div class="swiper-button-next"></div>-->
+            <!--            <div class="swiper-button-prev"></div>-->
+            <!--            <div class="swiper-button-next"></div>-->
 
             <!-- 如果需要滚动条 -->
-<!--            <div class="swiper-scrollbar"></div>-->
+            <!--            <div class="swiper-scrollbar"></div>-->
         </div>
     </div>
     <script src="js/jquery.js"></script>
@@ -310,15 +319,15 @@
     <script src="js/swiper.min.js"></script>
     <script src="js/index.js"></script>
     <script>
-        $(function () {
+        $(function() {
             // 移动端nav
             $('.nav-toggle').on('click', function() {
                 $('.m-nav').addClass('open');
             })
             $('.m-nav .m-nav__top .icon').on('click', function() {
-                $('.m-nav').removeClass('open')
-            })
-            //    swiper
+                    $('.m-nav').removeClass('open')
+                })
+                //    swiper
             var mySwiper = new Swiper('.swiper-container', {
                 direction: 'vertical', // 垂直切换选项
                 loop: false, // 循环模式
@@ -339,4 +348,5 @@
         })
     </script>
 </body>
+
 </html>

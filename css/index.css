@@ -192,6 +192,7 @@ body {
     font-size: 14px;
     line-height: 2;
 }
+
 .footer .contact__info a {
     color: #A9A9A9;
 }
@@ -662,7 +663,7 @@ body {
 }
 
 .contact #map {
-    width: 1600px;
+    /* width: 1600px; */
     height: 550px;
     border: #ccc solid 1px;
     font-size: 12px;
@@ -776,6 +777,10 @@ body {
     /**/
     .footer .contact__info>div {
         width: 100%;
+    }
+    .footer .footer__body {
+        text-align: center;
+        left: 50%;
     }
     #map {
         display: none;
