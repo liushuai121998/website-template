@@ -170,8 +170,9 @@ body {
 }
 
 .footer .footer__body {
+    width: 80%;
     position: absolute;
-    left: 50%;
+    left: 60%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
@@ -191,11 +192,6 @@ body {
     font-size: 14px;
     line-height: 2;
 }
-
-.index-footer.footer .contact__info>div {
-    width: 100%;
-}
-
 .footer .contact__info a {
     color: #A9A9A9;
 }
@@ -580,6 +576,7 @@ body {
 .about-us .text {
     font-size: 24px;
     color: rgb(89, 89, 89);
+    margin-bottom: 15px;
 }
 
 
