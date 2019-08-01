@@ -1,0 +1,20 @@
+{
+  "navs": [
+    {
+      "title": "首页",
+      "path": "index.html"
+    },
+    {
+      "title": "公司简介",
+      "path": "intro.html"
+    },
+    {
+      "title": "设计案例",
+      "path": "product.html"
+    },
+    {
+      "title": "联系我们",
+      "path": "contact.html"
+    }
+  ]
+}

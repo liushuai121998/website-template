@@ -1,7 +1,7 @@
 $(function() {
     //    核心业务
     var newsRender = {
-        render(news) {
+        render: function (news) {
             var _this = this
             var newsStr = ''
             if (news) {
@@ -11,7 +11,7 @@ $(function() {
                 $('.core-news__list').html(newsStr)
             }
         },
-        createItem(item, index) {
+        createItem: function (item, index) {
             return '<li class="core_news__list-item fl">\n' +
                 '                                <div class="core_news__list-item__img">\n' +
                 '                                    <img src=' + item.image + ' alt="">\n' +
@@ -26,7 +26,7 @@ $(function() {
 
     // 新闻资讯
     var newsCenter = {
-        render(news) {
+        render: function (news) {
             var _this = this
             var newsStr = ''
             if (news) {
@@ -36,7 +36,7 @@ $(function() {
                 $('.news-center__list').html(newsStr)
             }
         },
-        createItem(item, index) {
+        createItem: function (item, index) {
             return '<li class="news-center__list-item fl col-md-4 col-sm-6 col-xs-12">\n' +
                 '                                <div class="news-center__list-item__title">\n' +
                 '                                    <a href="javascript:;">' + item.title + '</a>\n' +
@@ -53,7 +53,7 @@ $(function() {
 
     // 作品欣赏
     var productRender = {
-        render(products) {
+        render: function (products) {
             var _this = this
             var newsStr = ''
             if (products) {
@@ -63,7 +63,7 @@ $(function() {
                 $('.product__list').html(newsStr)
             }
         },
-        createItem(item, index) {
+        createItem: function (item, index) {
             return '<li class="product__list-item col-md-4 col-sm-6 col-xs-12">\n' +
                 '                                <a href="./product-detail.html" class="product__list-item-link">\n' +
                 '                                    <div class="product__list-item__img-wrap">\n' +
@@ -79,6 +79,7 @@ $(function() {
                 '                            </li>'
         }
     }
+
 
 
     $.get('mock/index.json', null, function(data) {
