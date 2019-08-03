@@ -62,11 +62,15 @@ body {
     content: '';
     width: 0;
     height: 3px;
-    background: #333;
+    background: #007aff;
     position: absolute;
     bottom: 0;
     left: 0;
     transition: all 0.5s ease 0s;
+}
+
+.header__nav .header__nav-item.active:after {
+    width: 100%;
 }
 
 .header__nav .nav-link {
@@ -80,7 +84,9 @@ body {
     font-size: 16px;
     line-height: 65px;
 }
-
+.nav-link.actvie {
+    color: #007aff;
+}
 
 /*移动端*/
 
@@ -287,6 +293,7 @@ body {
 .picB {
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .picB .index-img {

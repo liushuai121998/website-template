@@ -28,8 +28,29 @@ $(function () {
 
 
     $.get('mock/nav.json', null, function(data) {
-       var navObj = nav.renderStr(data.navs)
+        var navObj = nav.renderStr(data.navs)
         $('.header__nav-content').html(navObj.navStr)
         $('.m-nav__content').html(navObj.mNavStr)
+
+        var $navs = $('.header__nav-content').find('.nav-link')
+        var $mNavs = $('.m-nav__content').find('.nav-link')
+        var pathName = window.location.pathname.slice(1)
+        setActiveNav($navs, pathName)
+        setActiveNav($mNavs, pathName)
     })
+
+    /**
+     * 设置Active Nav
+     * @param $navs
+     * @param pathName
+     */
+    function setActiveNav($navs, pathName) {
+        $navs.each(function () {
+            if($(this).attr('href').indexOf(pathName) > -1) {
+                $(this).addClass('actvie')
+                $(this).closest('li').addClass('active')
+                // $(this).parent('.header__nav-item').addClass('active')
+            }
+        })
+    }
 })
